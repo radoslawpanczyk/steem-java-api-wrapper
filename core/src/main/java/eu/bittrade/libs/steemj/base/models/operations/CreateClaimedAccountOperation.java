@@ -7,6 +7,7 @@ import eu.bittrade.libs.steemj.base.models.Asset;
 import eu.bittrade.libs.steemj.base.models.Authority;
 import eu.bittrade.libs.steemj.base.models.PublicKey;
 import eu.bittrade.libs.steemj.enums.OperationType;
+import eu.bittrade.libs.steemj.enums.ValidationType;
 import eu.bittrade.libs.steemj.exceptions.SteemInvalidTransactionException;
 import eu.bittrade.libs.steemj.util.SteemJUtils;
 
@@ -74,5 +75,10 @@ public class CreateClaimedAccountOperation extends AccountCreateOperation {
             throw new SteemInvalidTransactionException(
                     "A problem occured while transforming the operation into a byte array.", e);
         }
+    }
+
+    @Override
+    public void validate(ValidationType validationType) {
+
     }
 }

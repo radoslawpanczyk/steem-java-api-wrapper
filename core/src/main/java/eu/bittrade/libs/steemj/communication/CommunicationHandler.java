@@ -1,23 +1,10 @@
 package eu.bittrade.libs.steemj.communication;
 
-import java.io.IOException;
-import java.net.URI;
-import java.security.InvalidParameterException;
-import java.text.SimpleDateFormat;
-import java.util.List;
-import java.util.TimeZone;
-
-import org.apache.commons.lang3.tuple.Pair;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.fasterxml.jackson.core.Version;
-import com.fasterxml.jackson.databind.DeserializationConfig;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-
 import eu.bittrade.libs.steemj.base.models.serializer.BooleanSerializer;
 import eu.bittrade.libs.steemj.communication.jrpc.JsonRPCRequest;
 import eu.bittrade.libs.steemj.communication.jrpc.JsonRPCResponse;
@@ -26,6 +13,16 @@ import eu.bittrade.libs.steemj.exceptions.SteemCommunicationException;
 import eu.bittrade.libs.steemj.exceptions.SteemResponseException;
 import eu.bittrade.libs.steemj.exceptions.SteemTimeoutException;
 import eu.bittrade.libs.steemj.exceptions.SteemTransformationException;
+import org.apache.commons.lang3.tuple.Pair;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
+import java.net.URI;
+import java.security.InvalidParameterException;
+import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.TimeZone;
 
 /**
  * This class handles the communication to the Steem web socket API.
@@ -149,6 +146,7 @@ public class CommunicationHandler {
             mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
             mapper.configure(DeserializationFeature.FAIL_ON_UNRESOLVED_OBJECT_IDS, false);
             mapper.configure(DeserializationFeature.READ_UNKNOWN_ENUM_VALUES_AS_NULL, true);
+            mapper.configure(DeserializationFeature.FAIL_ON_INVALID_SUBTYPE, false);
 //            mapper.configure(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS, true);
 //            mapper.configure(DeserializationFeature.USE_BIG_INTEGER_FOR_INTS, true);
 //            mapper.configure(DeserializationFeature.USE_JAVA_ARRAY_FOR_JSON_ARRAY, false);
