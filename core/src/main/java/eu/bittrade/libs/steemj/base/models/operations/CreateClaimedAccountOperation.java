@@ -56,6 +56,11 @@ public class CreateClaimedAccountOperation extends AccountCreateOperation {
     }
 
     @Override
+    public void setFee(Asset fee) {
+        this.fee = fee;
+    }
+
+    @Override
     public byte[] toByteArray() throws SteemInvalidTransactionException {
         try (ByteArrayOutputStream serializedCreateClaimedAccountOperation = new ByteArrayOutputStream()) {
             serializedCreateClaimedAccountOperation.write(
