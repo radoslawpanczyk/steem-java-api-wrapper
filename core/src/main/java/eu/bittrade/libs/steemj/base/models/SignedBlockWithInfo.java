@@ -1,10 +1,10 @@
 package eu.bittrade.libs.steemj.base.models;
 
-import java.util.List;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * This class is the java implementation of the Steem "signed_block_with_info"
@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * 
  * @author <a href="http://steemit.com/@dez1337">dez1337</a>
  */
-public class SignedBlockWithInfo extends SignedBlock {
+public class SignedBlockWithInfo extends SignedBlock implements Serializable {
     @JsonProperty("block_id")
     private BlockId blockId;
     @JsonProperty("signing_key")
