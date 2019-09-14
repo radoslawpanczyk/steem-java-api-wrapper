@@ -1,8 +1,9 @@
 package eu.bittrade.libs.steemj.base.models;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-
 import eu.bittrade.libs.steemj.interfaces.ByteTransformable;
+
+import java.io.Serializable;
 
 /**
  * This class is the java implementation of the Steem "hardfork_version" object.
