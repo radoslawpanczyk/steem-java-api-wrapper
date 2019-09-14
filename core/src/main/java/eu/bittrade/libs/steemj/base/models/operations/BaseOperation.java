@@ -1,19 +1,19 @@
 package eu.bittrade.libs.steemj.base.models.operations;
 
+import eu.bittrade.libs.steemj.interfaces.HasJsonAnyGetterSetter;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import java.io.Serializable;
 import java.security.InvalidParameterException;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
-import eu.bittrade.libs.steemj.interfaces.HasJsonAnyGetterSetter;
 
 /**
  * This class summarizes utility methods for the different operation types.
  * 
  * @author <a href="http://steemit.com/@dez1337">dez1337</a>
  */
-public class BaseOperation implements HasJsonAnyGetterSetter {
+public class BaseOperation implements HasJsonAnyGetterSetter, Serializable {
 	private final Map<String, Object> _anyGetterSetterMap = new HashMap<>();
 	@Override
 	public Map<String, Object> _getter() {

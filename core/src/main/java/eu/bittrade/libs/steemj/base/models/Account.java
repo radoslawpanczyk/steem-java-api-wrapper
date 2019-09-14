@@ -1,5 +1,6 @@
 package eu.bittrade.libs.steemj.base.models;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.List;
@@ -16,7 +17,7 @@ import eu.bittrade.libs.steemj.interfaces.HasJsonAnyGetterSetter;
  * 
  * @author <a href="http://steemit.com/@dez1337">dez1337</a>
  */
-public class Account implements HasJsonAnyGetterSetter {
+public class Account implements HasJsonAnyGetterSetter, Serializable {
 	private final Map<String, Object> _anyGetterSetterMap = new HashMap<>();
 	@Override
 	public Map<String, Object> _getter() {

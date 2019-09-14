@@ -1,14 +1,13 @@
 package eu.bittrade.libs.steemj.base.models;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import eu.bittrade.libs.steemj.base.models.operations.Operation;
 import eu.bittrade.libs.steemj.interfaces.HasJsonAnyGetterSetter;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class is the java implementation of the Steem "applied_operation"
@@ -16,7 +15,7 @@ import eu.bittrade.libs.steemj.interfaces.HasJsonAnyGetterSetter;
  * 
  * @author <a href="http://steemit.com/@dez1337">dez1337</a>
  */
-public class AppliedOperation implements HasJsonAnyGetterSetter {
+public class AppliedOperation implements HasJsonAnyGetterSetter, Serializable {
 	private final Map<String, Object> _anyGetterSetterMap = new HashMap<>();
 	@Override
 	public Map<String, Object> _getter() {

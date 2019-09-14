@@ -1,18 +1,17 @@
 package eu.bittrade.libs.steemj.base.models;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import eu.bittrade.libs.steemj.base.models.deserializer.CommentOptionsExtensionDeserializer;
 import eu.bittrade.libs.steemj.base.models.serializer.CommentOptionsExtensionSerializer;
 import eu.bittrade.libs.steemj.interfaces.ByteTransformable;
 import eu.bittrade.libs.steemj.interfaces.HasJsonAnyGetterSetter;
 import eu.bittrade.libs.steemj.interfaces.Validatable;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class repesents a Steem "comment_options_extenson" object.
@@ -33,7 +32,8 @@ import eu.bittrade.libs.steemj.interfaces.Validatable;
  */
 @JsonDeserialize(using = CommentOptionsExtensionDeserializer.class)
 @JsonSerialize(using = CommentOptionsExtensionSerializer.class)
-public abstract class CommentOptionsExtension implements ByteTransformable, Validatable , HasJsonAnyGetterSetter {
+public abstract class CommentOptionsExtension implements ByteTransformable, Validatable , HasJsonAnyGetterSetter,
+														 Serializable {
 	private final Map<String, Object> _anyGetterSetterMap = new HashMap<>();
 	@Override
 	public Map<String, Object> _getter() {

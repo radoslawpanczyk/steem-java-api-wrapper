@@ -1,18 +1,17 @@
 package eu.bittrade.libs.steemj.base.models;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import eu.bittrade.libs.steemj.base.models.serializer.FutureExtensionsSerializer;
 import eu.bittrade.libs.steemj.exceptions.SteemInvalidTransactionException;
 import eu.bittrade.libs.steemj.interfaces.ByteTransformable;
 import eu.bittrade.libs.steemj.interfaces.HasJsonAnyGetterSetter;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class represents a "future_extensions_type" object which has no member
@@ -21,7 +20,7 @@ import eu.bittrade.libs.steemj.interfaces.HasJsonAnyGetterSetter;
  * @author <a href="http://steemit.com/@dez1337">dez1337</a>
  */
 @JsonSerialize(using = FutureExtensionsSerializer.class)
-public class FutureExtensions implements ByteTransformable , HasJsonAnyGetterSetter {
+public class FutureExtensions implements ByteTransformable , HasJsonAnyGetterSetter, Serializable {
 	private final Map<String, Object> _anyGetterSetterMap = new HashMap<>();
 	@Override
 	public Map<String, Object> _getter() {

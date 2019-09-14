@@ -1,22 +1,21 @@
 package eu.bittrade.libs.steemj.base.models;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.text.ParseException;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-
 import eu.bittrade.libs.steemj.exceptions.SteemInvalidTransactionException;
 import eu.bittrade.libs.steemj.interfaces.ByteTransformable;
 import eu.bittrade.libs.steemj.interfaces.HasJsonAnyGetterSetter;
 import eu.bittrade.libs.steemj.util.SteemJUtils;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.Serializable;
+import java.text.ParseException;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class represents a Steem "time_point_sec" Object. It basically wraps a
@@ -25,7 +24,7 @@ import eu.bittrade.libs.steemj.util.SteemJUtils;
  * 
  * @author <a href="http://Steemit.com/@dez1337">dez1337</a>
  */
-public class TimePointSec implements ByteTransformable , HasJsonAnyGetterSetter {
+public class TimePointSec implements ByteTransformable , HasJsonAnyGetterSetter, Serializable {
 	private final Map<String, Object> _anyGetterSetterMap = new HashMap<>();
 	@Override
 	public Map<String, Object> _getter() {

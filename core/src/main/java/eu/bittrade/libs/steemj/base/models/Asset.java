@@ -1,15 +1,7 @@
 package eu.bittrade.libs.steemj.base.models;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import eu.bittrade.libs.steemj.base.models.deserializer.AssetDeserializer;
 import eu.bittrade.libs.steemj.base.models.serializer.AssetSerializer;
 import eu.bittrade.libs.steemj.configuration.SteemJConfig;
@@ -18,6 +10,13 @@ import eu.bittrade.libs.steemj.exceptions.SteemInvalidTransactionException;
 import eu.bittrade.libs.steemj.interfaces.ByteTransformable;
 import eu.bittrade.libs.steemj.interfaces.HasJsonAnyGetterSetter;
 import eu.bittrade.libs.steemj.util.SteemJUtils;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class is the java implementation of the <a href=
@@ -28,7 +27,7 @@ import eu.bittrade.libs.steemj.util.SteemJUtils;
  */
 @JsonDeserialize(using = AssetDeserializer.class)
 @JsonSerialize(using = AssetSerializer.class)
-public class Asset implements ByteTransformable , HasJsonAnyGetterSetter {
+public class Asset implements ByteTransformable , HasJsonAnyGetterSetter, Serializable {
 	private final Map<String, Object> _anyGetterSetterMap = new HashMap<>();
 	@Override
 	public Map<String, Object> _getter() {

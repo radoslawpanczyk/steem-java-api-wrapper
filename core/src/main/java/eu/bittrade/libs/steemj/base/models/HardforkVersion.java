@@ -9,7 +9,7 @@ import eu.bittrade.libs.steemj.interfaces.ByteTransformable;
  * 
  * @author <a href="http://steemit.com/@dez1337">dez1337</a>
  */
-public class HardforkVersion extends Version implements ByteTransformable {
+public class HardforkVersion extends Version implements ByteTransformable, Serializable {
     /**
      * This class represents a hardfork version.
      * 

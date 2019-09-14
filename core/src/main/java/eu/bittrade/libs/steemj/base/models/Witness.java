@@ -1,24 +1,23 @@
 package eu.bittrade.libs.steemj.base.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import eu.bittrade.crypto.core.Sha256Hash;
+import eu.bittrade.libs.steemj.enums.WitnessScheduleType;
+import eu.bittrade.libs.steemj.interfaces.HasJsonAnyGetterSetter;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import eu.bittrade.crypto.core.Sha256Hash;
-import eu.bittrade.libs.steemj.enums.WitnessScheduleType;
-import eu.bittrade.libs.steemj.interfaces.HasJsonAnyGetterSetter;
 
 /**
  * This class represents a Steem "witness_api_object" object.
  * 
  * @author <a href="http://steemit.com/@dez1337">dez1337</a>
  */
-public class Witness implements HasJsonAnyGetterSetter {
+public class Witness implements HasJsonAnyGetterSetter, Serializable {
 	private final Map<String, Object> _anyGetterSetterMap = new HashMap<>();
 	@Override
 	public Map<String, Object> _getter() {

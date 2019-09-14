@@ -1,17 +1,8 @@
 package eu.bittrade.libs.steemj.base.models;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-
-import org.apache.commons.io.output.ByteArrayOutputStream;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import eu.bittrade.libs.steemj.base.models.deserializer.AccountAuthHashMapDeserializer;
 import eu.bittrade.libs.steemj.base.models.deserializer.PublicKeyHashMapDeserializer;
 import eu.bittrade.libs.steemj.base.models.serializer.AccountAuthHashMapSerializer;
@@ -21,13 +12,21 @@ import eu.bittrade.libs.steemj.interfaces.ByteTransformable;
 import eu.bittrade.libs.steemj.interfaces.HasJsonAnyGetterSetter;
 import eu.bittrade.libs.steemj.interfaces.SignatureObject;
 import eu.bittrade.libs.steemj.util.SteemJUtils;
+import org.apache.commons.io.output.ByteArrayOutputStream;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import java.io.IOException;
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * This class is the java implementation of the Steem "authority" object.
  * 
  * @author <a href="http://steemit.com/@dez1337">dez1337</a>
  */
-public class Authority implements ByteTransformable, SignatureObject , HasJsonAnyGetterSetter {
+public class Authority implements ByteTransformable, SignatureObject , HasJsonAnyGetterSetter, Serializable {
 	private final Map<String, Object> _anyGetterSetterMap = new HashMap<>();
 	@Override
 	public Map<String, Object> _getter() {

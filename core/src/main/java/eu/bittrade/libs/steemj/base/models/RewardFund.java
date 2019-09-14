@@ -1,22 +1,21 @@
 package eu.bittrade.libs.steemj.base.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import eu.bittrade.libs.steemj.enums.CurveId;
+import eu.bittrade.libs.steemj.interfaces.HasJsonAnyGetterSetter;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import eu.bittrade.libs.steemj.enums.CurveId;
-import eu.bittrade.libs.steemj.interfaces.HasJsonAnyGetterSetter;
 
 /**
  * This class is the java implementation of the Steem "reward_fund_object".
  * 
  * @author <a href="http://steemit.com/@dez1337">dez1337</a>
  */
-public class RewardFund implements HasJsonAnyGetterSetter {
+public class RewardFund implements HasJsonAnyGetterSetter, Serializable {
 	private final Map<String, Object> _anyGetterSetterMap = new HashMap<>();
 	@Override
 	public Map<String, Object> _getter() {

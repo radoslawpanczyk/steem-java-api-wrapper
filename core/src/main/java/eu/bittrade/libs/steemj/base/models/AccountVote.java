@@ -1,18 +1,18 @@
 package eu.bittrade.libs.steemj.base.models;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import eu.bittrade.libs.steemj.interfaces.HasJsonAnyGetterSetter;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import eu.bittrade.libs.steemj.interfaces.HasJsonAnyGetterSetter;
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class represents the Steem "account_vote" object.
  * 
  * @author <a href="http://steemit.com/@dez1337">dez1337</a>
  */
-public class AccountVote implements HasJsonAnyGetterSetter {
+public class AccountVote implements HasJsonAnyGetterSetter, Serializable {
 	private final Map<String, Object> _anyGetterSetterMap = new HashMap<>();
 	@Override
 	public Map<String, Object> _getter() {
